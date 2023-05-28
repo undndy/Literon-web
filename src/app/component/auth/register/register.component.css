@@ -1,0 +1,57 @@
+.first-section{
+  background-color: #FFFFFF!important;
+  width: 50%;
+}
+.logo{
+  width: 30%;
+  margin: 3%;
+}
+.second-section{
+  background-color: #FFFFFF!important;
+}
+.authentication-form{
+  background-color: #D5C5AE;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.button-1 {
+  display: inline-block;
+  padding: 1rem 1rem;
+  color: black;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: #D5C5AE;
+  width: 100%;
+  border-top-left-radius: 2rem!important;
+  border-top-right-radius: 2rem!important;
+  text-align: center;
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.first{
+  background-color: #E9DCDA;
+}
+.authentication{
+  margin: auto;
+}
+mat-form-field input{
+  border-radius: 10rem!important;
+}
+.sign-up-button{
+  background-color: #EBEBEB!important;
+  color: black!important;
+  margin-right: 2%;
+}
+.button-2{
+  display: flex;
+  flex-direction: row;
+}
+.mat-form-field.mat-form-field-appearance-fill .mat-form-field-wrapper .mat-form-field-flex{
+  border-radius: 45px!important;
+}

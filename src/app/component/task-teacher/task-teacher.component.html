@@ -1,0 +1,144 @@
+<div class="container" *ngFor="let poem of poems">
+  <div class="section" *ngFor="let author of authors" >
+    <ul class="breadcrumb">
+      <li><a [routerLink]="['/main']">Поэты</a></li>
+      <li>{{author.firstName}} {{author.patronymic}}</li>
+      <li>Анализ произведения</li>
+    </ul>
+    <h2>Анализ произведения</h2>
+    <h2>{{author.firstName}} {{author.patronymic}}</h2>
+    <h1> «{{poem.namePoem}}»</h1>
+    <div class="analyze-work">
+      <div class="analyzes">
+        <div class="analyze">
+          <pre class="work-text">{{poem.text}}</pre>
+        </div>
+      </div>
+
+      <form [formGroup]="form"> <!-- (ngSubmit)="submit()"-->
+        <h2>Создать Урок</h2>
+
+        <div formArrayName="questions">
+          <div *ngFor="let question of questions.controls; let i = index" [formGroupName]="i" class="question-container">
+            <div class="form-control">
+              <label for="type">Тип вопроса</label>
+              <select id="type" formControlName="type" (change)="onQuestionTypeChange(form)">
+                <option *ngFor="let option of questionTypes" [value]="option">{{ option }}</option>
+              </select>
+            </div>
+
+            <div *ngIf="questions.at(i)?.get('type')?.value === 'Текст'">
+              <div class="form-control">
+                <label for="optionText">Текст вопроса типа 2</label>
+                <input id="optionText" type="text" formControlName="optionText">
+              </div>
+            </div>
+
+            <div *ngIf="questions.at(i)?.get('type')?.value === 'Варианты'">
+              <div class="form-control">
+                <label for="text">Текст вопроса</label>
+                <input id="text" type="text" formControlName="text">
+              </div>
+              <div class="form-control">
+                <label for="question1">Вопрос 1</label>
+                <input id="question1" type="text" formControlName="question1">
+              </div>
+              <div class="form-control">
+                <label for="question2">Вопрос 2</label>
+                <input id="question2" type="text" formControlName="question2">
+              </div>
+              <div class="form-control">
+                <label for="question3">Вопрос 3</label>
+                <input id="question3" type="text" formControlName="question3">
+              </div>
+            </div>
+
+            <!-- Другие поля вопросов для других типов -->
+            <!-- ... -->
+
+            <button type="button" (click)="removeQuestion(i)">Удалить вопрос</button>
+          </div>
+        </div>
+
+        <div>
+          <button type="button" (click)="addQuestion()">Добавить вопрос</button>
+          <button type="submit">Отправить</button>
+        </div>
+      </form>
+    </div>
+    <div class="button">
+      <button type="submit" (click)="submit()">Создать</button>
+    </div>
+  </div>
+</div>
+
+<!--<div class="container" *ngFor="let poem of poems">-->
+<!--  <div class="section" *ngFor="let author of authors" >-->
+<!--    <ul class="breadcrumb">-->
+<!--      <li><a [routerLink]="['/main']">Поэты</a></li>-->
+<!--      <li>{{author.firstName}} {{author.patronymic}}</li>-->
+<!--      <li>Анализ произведения</li>-->
+<!--    </ul>-->
+<!--    <h2>Анализ произведения</h2>-->
+<!--    <h2>{{author.firstName}} {{author.patronymic}}</h2>-->
+<!--    <h1> «{{poem.namePoem}}»</h1>-->
+<!--    <div class="analyze-work">-->
+<!--      <div class="analyzes">-->
+<!--        <div class="analyze">-->
+<!--          <pre class="work-text">{{poem.text}}</pre>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <form [formGroup]="form" (ngSubmit)="submit()">-->
+<!--        <h2>Создать Урок</h2>-->
+
+<!--        <div formArrayName="questions">-->
+<!--          <div *ngFor="let question of questions.controls; let i = index" [formGroupName]="i" class="question-container">-->
+<!--            <div class="form-control">-->
+<!--              <label for="type">Тип вопроса</label>-->
+<!--              <select id="type" formControlName="type" (change)="onQuestionTypeChange(form)">-->
+<!--                <option *ngFor="let option of questionTypes" [value]="option">{{ option }}</option>-->
+<!--              </select>-->
+<!--            </div>-->
+
+<!--            <div *ngIf="questions.at(i)?.get('type')?.value === 'Текст'">-->
+<!--              <div class="form-control">-->
+<!--                <label for="questionText">Текст вопроса типа 2</label>-->
+<!--                <input id="questionText" type="text" formControlName="questionText">-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            <div *ngIf="questions.at(i)?.get('type')?.value === 'Варианты'">-->
+<!--              <div class="form-control">-->
+<!--                <label for="text">Текст вопроса</label>-->
+<!--                <input id="text" type="text" formControlName="text">-->
+<!--              </div>-->
+<!--              <div class="form-control">-->
+<!--                <label for="question1">Вопрос 1</label>-->
+<!--                <input id="question1" type="text" formControlName="question1">-->
+<!--              </div>-->
+<!--              <div class="form-control">-->
+<!--                <label for="question2">Вопрос 2</label>-->
+<!--                <input id="question2" type="text" formControlName="question2">-->
+<!--              </div>-->
+<!--              <div class="form-control">-->
+<!--                <label for="question3">Вопрос 3</label>-->
+<!--                <input id="question3" type="text" formControlName="question3">-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Другие поля вопросов для других типов &ndash;&gt;-->
+<!--            &lt;!&ndash; ... &ndash;&gt;-->
+
+<!--            <button type="button" (click)="removeQuestion(i)">Удалить вопрос</button>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div>-->
+<!--          <button type="button" (click)="addQuestion()">Добавить вопрос</button>-->
+<!--          <button type="submit">Отправить</button>-->
+<!--        </div>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

@@ -1,0 +1,189 @@
+.container{
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 100%;
+}
+.section{
+  width: 90%;
+  margin: auto;
+}
+h1{
+  text-align: center;
+  margin: 3%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+}
+.search-div{
+  background-color: #F5F5F5;
+  border-radius: 35px;
+  margin-bottom: 3%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+h2{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin: 2%;
+}
+.input{
+  width: 95%;
+  padding: 12px 24px;
+  background-color: #D0C7C5;
+  font-size: 14px;
+  line-height: 18px;
+  color: #D0C7C5;
+  background-size: 18px 18px;
+  border-radius: 50px;
+  margin-bottom: 3%;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/1200px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 98% center;
+}
+input{
+  margin: auto;
+}
+/*.cards {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    flex-wrap: wrap;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.card {*/
+/*    flex: 20%;*/
+/*}*/
+
+.card-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+.card-container:hover .card {
+  opacity: .7;
+  cursor: pointer;
+  filter: grayscale(1);
+}
+.card-container .card {
+  margin: 10px;
+  width: 215px;
+  float: left;
+  box-shadow: 0 0 2px 2px rgba(0,0,0,.05);
+  background: #F9E4DF;
+  -webkit-transition: .3s all ease;
+  transition: .15s all ease;
+  border-radius: 35px;
+}
+.card-container .card:hover {
+  box-shadow: 0 0 8px 3px rgba(0,0,0,.15);
+  transform: scale(1.025);
+  opacity: 1;
+  filter: grayscale(0);
+  transition: .35s all ease;
+}
+.card-container .card img {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.card-container .card .content {
+  padding: 15px;
+  background-color: #F9E4DF;
+  border-radius: 35px;
+}
+.card-container .card h3 {
+  font: 2.8rem/3.4rem 'Bree Serif', serif;
+  padding: 0;
+  margin: 0 0 10px;
+  letter-spacing: -.075rem
+}
+.card-container .card p {
+  color: black;
+  padding: 0;
+  margin: 0;
+  font: 1.3rem  'Montserrat', sans-serif;
+  text-align: center;
+}
+.articles h1{
+  text-align: center;
+}
+li {
+  list-style-type: disc;
+  font-size: 1.5rem;
+}
+ul{
+  margin-left: 8%;
+}
+.lesson-cards{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.lesson-cards:hover .lesson-card {
+  opacity: .7;
+  cursor: pointer;
+  filter: grayscale(1);
+}
+.lesson-cards .lesson-card{
+  margin: 10px;
+  width: 350px;
+  min-height: 220px;
+  float: left;
+  box-shadow: 0 0 2px 2px rgba(0,0,0,.05);
+  background: #FC887C;
+  -webkit-transition: .3s all ease;
+  transition: .15s all ease;
+  border-radius: 35px;
+}
+.lesson-cards .lesson-card img {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.lesson-cards .lesson-card .content {
+  padding: 15px;
+  border-radius: 35px;
+}
+.lesson-cards .lesson-card h3 {
+  font: 2.8rem/3.4rem 'Bree Serif', serif;
+  padding: 0;
+  margin: 0 0 10px;
+  letter-spacing: -.075rem
+}
+.lesson-cards .lesson-card p {
+  color: black;
+  padding: 0;
+  margin-left: 4%;
+  font: 1.4rem  'Gilroy', sans-serif;
+  text-align: start;
+}
+.gif{
+
+}
+.img-container {
+  display: flex;
+  align-items: center;
+}
+
+.img-container img {
+  width: 50%;
+  height: auto;
+  margin-right: 20px;
+}
+
+.img-container h1 {
+  text-align: left;
+  font-family: Gilroy, sans-serif; /* Добавлено для задания шрифта Gilroy */
+  font-size: 50px;
+  font-weight: bold; /* Добавлено для жирного шрифта */
+}

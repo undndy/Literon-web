@@ -1,0 +1,41 @@
+<!--<div *ngFor="let author of authors">-->
+<!--  <h3 [routerLink]="['/main']">Поэты > {{author.firstName}} {{author.lastName}} {{author.patronymic}}</h3>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--  <div class="section">-->
+<!--    <div *ngFor="let author of authors">-->
+<!--      <h2 style="text-align: center">{{author.firstName}} {{author.lastName}} {{author.patronymic}}</h2>-->
+<!--    </div>-->
+<!--    <div *ngFor="let poem of poems">-->
+<!--      <h2 style="text-align: center">"{{poem.namePoem}}"</h2>-->
+<!--      <div class="work-container">-->
+<!--        <div class="work">{{poem.text}}</div>-->
+<!--      </div>-->
+<!--      <div class="button-container">-->
+<!--        <button (click)="goToTaskPage(poem.id)">Провести анализ</button>-->
+<!--        <button (click)="goToTeacherTaskPage(poem.id)">Создать Урок</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<div *ngFor="let author of authors">
+  <h3 [routerLink]="['/main']">Поэты > {{author.firstName}} {{author.lastName}} {{author.patronymic}}</h3>
+</div>
+
+<div class="container">
+  <div class="section">
+    <div *ngFor="let author of authors">
+      <h2 style="text-align: center">{{author.firstName}} {{author.lastName}} {{author.patronymic}}</h2>
+    </div>
+    <div class="work" *ngFor="let poem of poems">
+      <h2 style="text-align: center">"{{poem.namePoem}}"</h2>
+      <pre class="work-text">{{poem.text}}</pre>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let poem of poems">
+  <a class="button-1" (click)="goToTaskPage(poem.id)">Провести анализ</a>
+  <a class="button-1" (click)="goToTeacherTaskPage(poem.id)">Создать Урок</a>
+</div>

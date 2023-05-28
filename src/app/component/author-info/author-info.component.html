@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="section" *ngFor="let author of authors">
+    <ul class="breadcrumb">
+      <li><a [routerLink]="['/main']">Поэты</a></li>
+      <li>{{author.firstName}} {{author.lastName}} {{author.patronymic}}</li>
+    </ul>
+    <h1>{{author.firstName}} {{author.lastName}} {{author.patronymic}}</h1>
+
+    <div class="info-section">
+      <div class="poet-info">
+        <p>{{author.description}}<br></p>
+      </div>
+          <div class="card">
+            <img src="./assets/author1-1.png"/>
+            <div class="content">
+              <div class="info"><span>Дата рождения</span><p class="card-info">{{author.dateBirth}} </p></div>
+              <div class="info"><span>Дата смерти</span><p class="card-info"> {{author.dateDeath}} </p></div>
+              <div class="info"><span>Род деятельностия</span><p class="card-info">поэт, переводчик</p></div>
+              <div class="info"><span>Гражданство</span><p class="card-info">СССР</p></div>
+              <div class="info"><span>Жанр</span><p class="card-info">поэзия</p></div>
+              <div class="info"><span>Язык произведений</span><p class="card-info">русский</p></div>
+            </div>
+        </div>
+    </div>
+    <h1 class="year-name">Хроногроф</h1>
+    <div class="year-info">
+      <div class="years" *ngFor="let chrono of chronos">
+        <p> <span>{{chrono.year}} г. - </span>{{chrono.text}}</p>
+      </div>
+    </div>
+    <h1 class="year-name">Основные произведения </h1>
+    <div class="main-works" *ngFor="let poem of poemsByAuthor; let i=index">
+      <ol [start]="i+1">
+        <li><a (click)="goToPoemPage(poem.id)">{{poem.namePoem}}</a></li>
+      </ol>
+    </div>
+  </div>
+</div>

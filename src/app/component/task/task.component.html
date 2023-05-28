@@ -1,0 +1,68 @@
+<div class="container" *ngFor="let poem of poems">
+  <div class="section" *ngFor="let author of authors">
+    <ul class="breadcrumb">
+      <li><a [routerLink]="['/main']">Поэты</a></li>
+      <li>{{author.firstName}} {{author.patronymic}}</li>
+      <li>Анализ произведения</li>
+    </ul>
+    <h2>Анализ произведения</h2>
+    <h2>{{author.firstName}} {{author.patronymic}}</h2>
+    <h1> «{{poem.namePoem}}»</h1>
+    <div class="analyze-work">
+      <div class="analyzes">
+        <div class="analyze">
+          <pre class="work-text">{{poem.text}}</pre>
+        </div>
+      </div>
+      <div class="work">
+        <div>
+          <div *ngFor="let task of tasks" class="input-div" >
+            <img src="assets/images/faq.svg" class="faq">
+            <p>{{task.text}}</p>
+            <input class="input" type="text" placeholder="Введите свой ответ">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let task of tasks">
+      <div class="button" >
+        <a class="button-1" (click)="goToPdfPage(task.id)">Завершить</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!--<div class="container" *ngFor="let poemAuthor of poemAuthors">-->
+<!--  <div class="section">-->
+<!--    <ul class="breadcrumb">-->
+<!--      <li><a [routerLink]="['/main']">Поэты</a></li>-->
+<!--      <li>{{ poemAuthor.author.firstName }} {{ poemAuthor.author.patronymic }}</li>-->
+<!--      <li>Анализ произведения</li>-->
+<!--    </ul>-->
+<!--    <h2>Анализ произведения</h2>-->
+<!--    <h2>{{ poemAuthor.author.firstName }} {{ poemAuthor.author.patronymic }}</h2>-->
+<!--    <h1>«{{ poemAuthor.poem.namePoem }}»</h1>-->
+<!--    <div class="analyze-work">-->
+<!--      <div class="analyzes">-->
+<!--        <div class="analyze">-->
+<!--          <pre class="work-text">{{ poemAuthor.poem.text }}</pre>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="work">-->
+<!--        <div>-->
+<!--          <div *ngFor="let task of tasks" class="input-div">-->
+<!--            <img src="assets/images/faq.svg" class="faq">-->
+<!--            <p>{{ task.text }}</p>-->
+<!--            <input class="input" type="text" placeholder="Введите свой ответ">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div *ngFor="let task of tasks">-->
+<!--      <div class="button">-->
+<!--        <a class="button-1" (click)="goToPdfPage(task.id)">Завершить</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

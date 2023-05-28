@@ -1,0 +1,59 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Add Page as Admin</h2>
+
+  <div class="form-control">
+    <label for="firstName">First Name</label>
+    <input id="firstName" type="firstName" formControlName="firstName">
+  </div>
+
+  <div class="form-control">
+    <label for="lastName">Last Name</label>
+    <input id="lastName" type="lastName" formControlName="lastName">
+  </div>
+
+  <div class="form-control">
+    <label for="patronymic">patronymic</label>
+    <input id="patronymic" type="patronymic" formControlName="patronymic">
+  </div>
+
+  <div class="form-control">
+    <label for="description">description</label>
+    <input id="description" type="description" formControlName="description">
+  </div>
+
+  <div class="form-control">
+    <label for="biography">biography</label>
+    <input id="biography" type="biography" formControlName="biography">
+  </div>
+
+  <div class="form-control">
+    <label for="dateBirth">dateBirth</label>
+    <input id="dateBirth" type="dateBirth" formControlName="dateBirth">
+  </div>
+
+  <div class="form-control">
+    <label for="dateDeath">dateDeath</label>
+    <input id="dateDeath" type="dateDeath" formControlName="dateDeath">
+  </div>
+
+  <div class="form-control">
+    <label for="chronogrof">chronogrof</label>
+    <input id="chronogrof" type="chronogrof" formControlName="chronogrof">
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid || submitted">Save</button>
+</form>
+
+<form [formGroup]="form" (ngSubmit)="submitForPoem()">
+  <h2>Add Page as Admin</h2>
+
+  <div class="form-control">
+    <label for="namePoem">Name Poem</label>
+    <input id="namePoem" type="firstName" formControlName="namePoem">
+  </div>
+
+  <div class="form-control">
+    <label for="text">text</label>
+    <input id="text" type="lastName" formControlName="text">
+  </div>
+</form>
